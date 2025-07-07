@@ -270,7 +270,7 @@ WHERE
     r.return_date IS NULL
         AND CURRENT_DATE() - i.issue_date > 30;
 
--- Task 15: Branch Performance Report
+-- Task 14: Branch Performance Report
 -- Create a query that generates a performance report for each branch, 
 -- showing the number of books issued, the number of books returned, 
 -- and the total revenue generated from book rentals.
@@ -295,7 +295,7 @@ SELECT
 FROM
     branch_report;
 
--- Task 16: CTAS: Create a Table of Active Members
+-- Task 15: CTAS: Create a Table of Active Members
 -- Use the CREATE TABLE AS (CTAS) 
 -- statement to create a new table active_members containing members
 --  who have issued at least one book in the last 2 months.
@@ -310,7 +310,7 @@ WHERE
         WHERE
             issue_status.issue_date <= (CURRENT_DATE() - INTERVAL 60 DAY));
 
--- Task 17: Find Employees with the Most Book Issues Processed
+-- Task 16: Find Employees with the Most Book Issues Processed
 -- Write a query to find the top 3 employees who have processed the most book issues.
 -- Display the employee name, number of books processed, and their branch.
 
@@ -329,7 +329,7 @@ GROUP BY e.emp_id
 ORDER BY book_issued DESC
 LIMIT 3;
 
--- Task 20: Create Table As Select (CTAS) Objective: Create a CTAS (Create Table As Select) 
+-- Task 17: Create Table As Select (CTAS) Objective: Create a CTAS (Create Table As Select) 
 -- query to identify overdue books and calculate fines.
 -- Description: Write a CTAS query to create a new table that lists each member
 -- and the books they have issued but not returned within 30 days. The table should include: 
